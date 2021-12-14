@@ -23,7 +23,7 @@ list.append(students('Hector Salazar', 0))
 list.append(students('Jose Manuel', 0))
 
 
-for i in range(random.randrange(1,1000)):
+for i in range(times):
     x = random.randrange(len(list))
     list[x].prob = list[x].prob + 1
 
