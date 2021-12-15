@@ -3,7 +3,6 @@ import random
 
 students = student
 student_selected = students
-count = None
 
 list = []
 resp= 'Y'
