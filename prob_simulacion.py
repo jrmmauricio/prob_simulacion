@@ -4,8 +4,9 @@ import random
 students = student
 student_selected = students
 count = None
-times = random.randrange(1,1000)
+
 list = []
+resp= 'Y'
 
 list.append(students('Mauricio', 0))
 list.append(students('Enrique', 0))
@@ -22,14 +23,19 @@ list.append(students('Jose Angel', 0))
 list.append(students('Hector Salazar', 0))
 list.append(students('Jose Manuel', 0))
 
+while resp=='y' or resp=='Y':
+    print ('Ingrese el numero de simulaciones que desea realizar')
+    numero= input()
+    times=int(numero)
 
-for i in range(times):
-    x = random.randrange(len(list))
-    list[x].prob = list[x].prob + 1
+    for i in range(times):
+        x = random.randrange(len(list))
+        list[x].prob = list[x].prob + 1
 
-for obj in list:
-    if (count is None or obj.prob > count):
-        count = obj.prob
-        student_selected = obj
-
-print ('El estudiante escogido es: ', student_selected.name, 'con ', student_selected.prob, 'veces escogido en', times , 'simulaciones.')
+    escodigo= random.randrange(len(list))
+    
+    print ('El estudiante escogido es: ', list[escodigo].name, 'con ', list[escodigo].prob, 'veces escogido en', times , 'simulaciones.')
+    for j in range(len(list)):
+        list[j].prob= 0
+    print('Desea hacer otra simulacion? y=si / n=no')
+    resp= input()
